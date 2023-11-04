@@ -7,9 +7,9 @@ function App() {
     <div>
       <div className="note-header">header</div>
       <div className="note-app">
-        <AddNewNote />
+        <AddNewNote setNotse={setNotse} />
         <div className="note-container">
-          <NoteList />
+          <NoteList notse={notse} />
         </div>
       </div>
     </div>
