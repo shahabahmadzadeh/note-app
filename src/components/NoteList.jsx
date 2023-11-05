@@ -1,14 +1,14 @@
-function NoteList({ notse }) {
+function NoteList({ notse, onDelete }) {
   return (
     <div className="note-list">
       {notse.map((note) => (
-        <NoteItem note={note} key={note.id} />
+        <NoteItem note={note} key={note.id} onDelete={onDelete} />
       ))}
     </div>
   );
 }
 
-function NoteItem({ note }) {
+function NoteItem({ note, onDelete }) {
   const option = {
     year: "numeric",
     month: "long",
@@ -22,7 +22,7 @@ function NoteItem({ note }) {
           <p className="desc">{note.description}</p>
         </div>
         <div className="actions">
-          <button className="trash">
+          <button onClick={() => onDelete(note.id)} className="trash">
             <img src="../../public/delete.png" />
           </button>
           <input type="checkbox" />
