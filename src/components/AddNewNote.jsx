@@ -5,6 +5,8 @@ function AddNewNote({ setNotse }) {
   const [description, setDescription] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!title || !description) return null;
     const newNote = {
       id: Date.now(),
       title,
