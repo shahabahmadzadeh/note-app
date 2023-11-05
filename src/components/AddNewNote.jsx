@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddNewNote({ setNotse }) {
+function AddNewNote({ onAddNote }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const handleSubmit = (e) => {
@@ -11,10 +11,11 @@ function AddNewNote({ setNotse }) {
       id: Date.now(),
       title,
       description,
+      complete: false,
       createdAt: new Date().toISOString(),
     };
     // update notse
-    setNotse((prevNotse) => [...prevNotse, newNote]);
+    onAddNote(newNote);
     setTitle(""), setDescription("");
   };
   return (
