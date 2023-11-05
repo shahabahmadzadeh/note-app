@@ -11,7 +11,7 @@ function AddNewNote({ setNotse }) {
       id: Date.now(),
       title,
       description,
-      creatAtt: new Date().toISOString(),
+      createdAt: new Date().toISOString(),
     };
     // update notse
     setNotse((prevNotse) => [...prevNotse, newNote]);
